@@ -9,6 +9,7 @@ const encriptado = document.querySelector(".encriptado");
 
 function btnEncriptar(){
   const textoEncriptado = encriptar(encriptado.value)
+  mensaje.value = textoEncriptadober
 }
 
 function encriptar(stringEncriptada) {
