@@ -7,9 +7,9 @@ const encriptado = document.querySelector(".encriptado");
 //La letra "o" es convertida para "ober"
 //La letra "u" es convertida para "ufat"
 
-function btnEncriptar(){
-  const textoEncriptado = encriptar(encriptado.value)
-  mensaje.value = textoEncriptadober
+function btnEncriptar() {
+  const textoEncriptado = encriptar(encriptado.value);
+  mensaje.value = textoEncriptadober;
 }
 
 function encriptar(stringEncriptada) {

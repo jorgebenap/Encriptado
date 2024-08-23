@@ -19,10 +19,14 @@
 }
 
 .logo {
-  width: 5%;
-  height: 5%;
-  padding-top: 100px;
-  margin-left: 20px;
+  width: 120px;
+  height: 48px;
+  padding-top: 40px;
+  margin-left: 40px;
+}
+
+body {
+  margin: 0%;
 }
 
 main {
@@ -36,27 +40,11 @@ main {
   color: var(--color-secundario);
   margin-top: 90px;
   text-transform: lowercase;
+  resize: none;
 }
 
 ::placeholder { color: var(--color-secundario);}
 .text_area:focus {
-  outline: none;
-}
-
-.mensaje {
-  background: var(--color-terciario);
-  background-image: url("/images/Muñeco.png");
-  background-repeat: no-repeat;
-  border: none;
-  border-radius: 24px;
-  color: var(--color-secundario);
-  margin-left: 25px;
-  margin-top: 20px;
-  padding-left: 20px;
-  position: fixed;
-}
-
-.mensaje:focus {
   outline: none;
 }
 
@@ -114,11 +102,60 @@ main {
   background: var(--color-terciario);
   border: 1px solid var(--color-terciario);
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-  height: 800px;
-  width: 450px;
+  height: 944px;
+  width: 400px;
+  margin-top: 0;
   display: flex;
+  justify-content: center;
   border-radius: 32px;
   margin-left: 100px;
+  flex-direction: column;
+}
+
+.mensaje {
+  background: var(--color-terciario);
+  background-image: url("/images/Muñeco.png");
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 24px;
+  color: var(--color-secundario);
+  resize: none;
+}
+
+.mensaje:focus {
+  outline: none;
+}
+
+.textos {
+  background:none;
+}
+
+.segundo_mensaje {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: var(--color-text-mensaje);
+  text-align: center;
+  font-family: var(--tipo-fuente-Inter);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.texto_ingreso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: var(--color-desencrip);
+  text-align: center;
+  font-family: var(--tipo-fuente-Inter);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 .copiar {
@@ -128,10 +165,10 @@ main {
   color: var(--color-secundario);
   cursor: pointer;
   height: 67px;
-  margin-left: 60px;
-  margin-top: 675px;
-  position: absolute;
+  margin-left: 35px;
+  margin-top: 75px;
   width: 336px;
+  align-items: end;
 }
 
 /*Responsive*/
