@@ -53,6 +53,7 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 20%;
 }
 
 .informacion {
@@ -66,7 +67,7 @@ main {
 
 .botones {
   display: flex;
-  margin-top: 18px;
+  margin-top: 2%;
   
 }
 
@@ -106,7 +107,6 @@ main {
   width: 400px;
   margin-top: 0;
   display: flex;
-  justify-content: center;
   border-radius: 32px;
   margin-left: 100px;
   flex-direction: column;
@@ -142,6 +142,7 @@ main {
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
+  margin-top: 15%;
 }
 
 .texto_ingreso {
@@ -152,10 +153,11 @@ main {
   color: var(--color-desencrip);
   text-align: center;
   font-family: var(--tipo-fuente-Inter);
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  margin-top: 25%;
 }
 
 .copiar {
@@ -166,7 +168,7 @@ main {
   cursor: pointer;
   height: 67px;
   margin-left: 35px;
-  margin-top: 75px;
+  margin-top: 30%;
   width: 336px;
   align-items: end;
 }
@@ -174,25 +176,25 @@ main {
 /*Responsive*/
 
 @media (max-width: 57.5em) {
-  .container {
+  main {
     display: flex;
     flex-direction: row;
   }
-  .encriptar {
+  section {
     width: 100%;
   }
-  .texto {
+  .text_area {
     width: 80%;
     height:60%;
     left: 10%;
     top: 5%;
   }
-  .terminos {
+  .logo_informacion {
     width: 80%;
     left: 10%;
     top: 67%;
   }
-  .terminos h6 {
+  .informacion h6 {
     font-size:16px;
   }
   .botones {
@@ -211,17 +213,17 @@ main {
     width: 47.5%;
     padding: 1.8%;
   }
-  .encriptado {
+  .textos {
     width: 80%;
     height:15%;
     left: 10%;
     top: 80%;
   }
-  .mensaje-encriptado {
+  .mensaje {
     width: 100%;
     top: 5%;
   }
-  .encriptado img {
+  .mensaje img {
     top: 0;
     display: none;
     visibility: hidden;
