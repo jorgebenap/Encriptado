@@ -1,5 +1,8 @@
-const texto = document.querySelector(".texto");
-const encriptado = document.querySelector(".encriptado");
+
+
+
+const texto = document.querySelector(".text_area");
+const encriptado = document.querySelector(".mensaje_encriptado");
 
 //La letra "e" es convertida para "enter"
 //La letra "i" es convertida para "imes"
@@ -8,18 +11,27 @@ const encriptado = document.querySelector(".encriptado");
 //La letra "u" es convertida para "ufat"
 
 function btnEncriptar() {
-  const textoEncriptado = encriptar(encriptado.value);
-  mensaje.value = textoEncriptadober;
+  //console.log(texto.value);
+  const textoEncriptado = encriptar(texto.value);
+  encriptado.value = textoEncriptado;
 }
 
 function encriptar(stringEncriptada) {
-let matrizCodigo = [["a","ai"],["e","enter"],["i","imes"],["o","ober"],["u","ufat"]];
-stringEncriptada = stringEncriptada.toLowerCase()
+  let matrizCodigo = [
+    ["a","ai"],
+    ["e","enter"],
+    ["i","imes"],
+    ["o","ober"],
+    ["u","ufat"]
+  ];
+  stringEncriptada = stringEncriptada.toLowerCase()
 
-for(let i = 0; i <matrizCodigo.length; i++){
-  if (stringEncriptada.includes(matrizCodigo[i][0])){
-    stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
+  for(let i = 0; i < matrizCodigo.length; i++){ 
+    console.log('string',stringEncriptada);
+    if (stringEncriptada.includes(matrizCodigo[i][0])){
+      stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
+    }
   }
-}
-return stringEncriptada
+
+  return stringEncriptada
 }

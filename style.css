@@ -18,11 +18,14 @@
   line-height: 150%;
 }
 
+header {
+  padding: 40px;
+  width: 100%;
+}
+
 .logo {
   width: 120px;
   height: 48px;
-  padding-top: 40px;
-  margin-left: 40px;
 }
 
 body {
@@ -110,6 +113,10 @@ main {
   border-radius: 32px;
   margin-left: 100px;
   flex-direction: column;
+}
+
+.imagen-empty {
+  width: 100%;
 }
 
 .mensaje {
