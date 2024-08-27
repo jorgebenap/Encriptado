@@ -4,58 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="shortcut icon" href="/images/Logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/Logo.png" />
   </head>
   <body>
     <header>
-      <img class="logo" src="/images/Logo.png" alt="Logo de Alura" />
+      <img class="logo" src="images/Logo.png" alt="Logo de Alura" />
     </header>
-
     <main>
-      <section>
-        <textarea
-          class="text_area"
-          cols="40"
-          rows="10"
-          placeholder="ingrese el texto aquí"
-        ></textarea>
-        <div class="logo_informacion">
-          <img
-            class="logo_exclamacion"
-            src="/images/exclamation.png"
-            alt="Logo de exclamacion"
-          />
-          <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
-        </div>
 
-        <div class="botones">
-          <button class="btn_encriptar" onclick="btnEncriptar()">
-            Encriptar
-          </button>
-          <button class="btn_desencriptar">Desencriptar</button>
+      <section class="seccion_1">
+        <div class="contenedor_caja_texto">
+          <textarea class="caja_texto" placeholder="ingrese el texto aquí" cols="30" rows="12"></textarea>
+        </div>
+        <div class="logo_informacion">
+          <img src="images/exclamation.png" alt="">
+          <p>Solo letras minusculas y sin acentos</p>
+        </div>
+        <div class="contenedor_botones">
+          <input class="btn_encriptar" type="button" value="Encriptar"/>
+          <input class="btn_desencriptar" type="button" value="Desencriptar"/>
         </div>
       </section>
 
       <section class="contenedor_mensaje">
-        <div class="textos">
-          <textarea class="mensaje_encriptado" cols="22" rows="9"></textarea>
-
-          <div class="estado-vacio">
-            <img class="imagen-empty" src="images/Muñeco.png" />
-            <h6 class="segundo_mensaje">Ningún mensaje fue encontrado</h6>
-            <p class="texto_ingreso">
-              Ingresa el texto que desees encriptar o desencriptar.
-            </p>
+          <div class="muñeco">
+            <img class="imagen_empty" src="images/Muñeco.png" alt="muñeco con lupa">
           </div>
-
-          <button class="copiar">Copiar</button>
-        </div>
+          <div class="contenedor_parrafo">
+            <h3>Ningún mensaje fue encontrado</h3>
+            <p>Ingrese el texto que desee encriptar o desencriptar</p>
+          </div>
+          <div class="contenedor_resultado oculto">
+            <p class="texto_resultado"></p>
+          </div>
+          <input class="btn_copiar oculto" type="button" value="Copiar"/>
       </section>
+
     </main>
     <footer>
       <div class="foot"></div>
     </footer>
   </body>
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
 </html>

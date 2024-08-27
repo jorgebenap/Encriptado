@@ -1,37 +1,92 @@
+const botonEncriptar = document.querySelector(".btn_encriptar");
+const botonDesencriptar = document.querySelector(".btn_desencriptar");
+const imagen = document.querySelector(".imagen_empty");
+const contenedor = document.querySelector(".contenedor_parrafo");
+const resultado = document.querySelector(".texto_resultado");
+const encriptado = document.querySelector(".contenedor_resultado");
+const btn_copiar = document.querySelector(".btn_copiar");
+const caja_texto = document.querySelector(".caja_texto");
 
-
-
-const texto = document.querySelector(".text_area");
-const encriptado = document.querySelector(".mensaje_encriptado");
-
-//La letra "e" es convertida para "enter"
-//La letra "i" es convertida para "imes"
-//La letra "a" es convertida para "ai"
-//La letra "o" es convertida para "ober"
-//La letra "u" es convertida para "ufat"
-
-function btnEncriptar() {
-  //console.log(texto.value);
-  const textoEncriptado = encriptar(texto.value);
-  encriptado.value = textoEncriptado;
+function ocultarAdelante() {
+  imagen.classList.add("ocultar");
+  contenedor.classList.add("ocultar");
+  encriptado.classList.remove("oculto");
+  btn_copiar.classList.remove("oculto");
 }
 
-function encriptar(stringEncriptada) {
-  let matrizCodigo = [
-    ["a","ai"],
-    ["e","enter"],
-    ["i","imes"],
-    ["o","ober"],
-    ["u","ufat"]
-  ];
-  stringEncriptada = stringEncriptada.toLowerCase()
+function recuperarTexto() {
+  return caja_texto.value.toLowerCase();
+}
 
-  for(let i = 0; i < matrizCodigo.length; i++){ 
-    console.log('string',stringEncriptada);
-    if (stringEncriptada.includes(matrizCodigo[i][0])){
-      stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
+function encriptarTexto(mensaje) {
+  var texto = mensaje;
+  var textoFinal = "";
+
+  for (var i = 0; i < texto.length; i++) {
+    if (texto[i] == "a") {
+      textoFinal = textoFinal + "ai";
+    } else if (texto[i] == "e") {
+      textoFinal = textoFinal + "enter";
+    } else if (texto[i] == "i") {
+      textoFinal = textoFinal + "imes";
+    } else if (texto[i] == "o") {
+      textoFinal = textoFinal + "ober";
+    } else if (texto[i] == "u") {
+      textoFinal = textoFinal + "ufat";
+    } else {
+      textoFinal = textoFinal + texto[i];
+    }
+  }
+  return textoFinal;
+}
+
+function desencriptarTexto(mensaje) {
+  var texto = mensaje;
+  var textoFinal = "";
+
+  for (var i = 0; i < texto.length; i++) {
+    if (texto[i] == "a") {
+      textoFinal = textoFinal + "a";
+      i = i + 1;
+    } else if (texto[i] == "e") {
+      textoFinal = textoFinal + "e";
+      i = i + 4;
+    } else if (texto[i] == "i") {
+      textoFinal = textoFinal + "i";
+      i = i + 3;
+    } else if (texto[i] == "o") {
+      textoFinal = textoFinal + "o";
+      i = i + 3;
+    } else if (texto[i] == "u") {
+      textoFinal = textoFinal + "u";
+      i = i + 3;
+    } else {
+      textoFinal = textoFinal + texto[i];
     }
   }
 
-  return stringEncriptada
+  return textoFinal;
 }
+
+function encriptar() {
+  ocultarAdelante();
+  var cajatexto = recuperarTexto();
+  resultado.textContent = encriptarTexto(cajatexto);
+}
+
+function desencriptar() {
+  ocultarAdelante();
+  var cajatexto = recuperarTexto();
+  resultado.textContent = desencriptarTexto(cajatexto);
+}
+
+botonEncriptar.onclick = encriptar;
+botonDesencriptar.onclick = desencriptar;
+
+btn_copiar.addEventListener(
+  "click",
+  (copiar = () => {
+    var contenido = document.querySelector(".texto_resultado").textContent;
+    navigator.clipboard.writeText(contenido);
+  })
+);
